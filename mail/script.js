@@ -17,15 +17,16 @@ buttonElement.addEventListener('click',
         // runs through every email in the array and compares with the user input
         for(i = 0; i < authorizedList.length; i++){
             if(userInput == authorizedList[i]){
-                console.log(`${userInput} valid`)
-                // if there is a match, the access variable is set to true
+                // if there is a match, the access variable is set to true and the result is displayed
                 accessGranted = true;
+                resultElement.innerHTML = `Welcome ${userInput}, Access Granted`;
             }
         }
         // after comparing the user info with all the emails on the list
         // if the access variable is still false then access is denied
         if(accessGranted == false){
             console.log(`${userInput} denied`);
+            resultElement.innerHTML = `Access Denied`;
         }
     }
 )
