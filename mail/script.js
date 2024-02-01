@@ -19,7 +19,8 @@ buttonElement.addEventListener('click',
             if(userInput == authorizedList[i]){
                 // if there is a match, the access variable is set to true and the result is displayed
                 accessGranted = true;
-                resultElement.innerHTML = `Welcome ${userInput}, Access Granted`;
+                resultElement.innerHTML = `Welcome Agent n°${i+1}, Access Granted`;
+                resultElement.className = 'opacity-100';
             }
         }
         // after comparing the user info with all the emails on the list
@@ -27,6 +28,8 @@ buttonElement.addEventListener('click',
         if(accessGranted == false){
             console.log(`${userInput} denied`);
             resultElement.innerHTML = `Access Denied`;
+            resultElement.className = 'opacity-100';
+
         }
     }
 )
